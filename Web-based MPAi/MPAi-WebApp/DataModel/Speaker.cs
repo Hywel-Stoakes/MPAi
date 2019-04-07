@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MPAi_WebApp.DataModel
+namespace UploadRecording.DataModel
 {
     /// <summary>
     /// Enum representing the speaker of a recording. 

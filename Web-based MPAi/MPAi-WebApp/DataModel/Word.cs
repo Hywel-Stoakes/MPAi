@@ -5,21 +5,19 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MPAi_WebApp.DataModel
+namespace UploadRecording.DataModel
 {
-    /// <summary>
-    /// Wrapper class to hold values from the Word table. 
-    /// Each field corresponds to a row in the Word SQL table.
-    /// These classes make it easier to move results from queries around the program.
-    /// </summary>
-    public class Word
+    [Table("Word")]
+    public partial class Word
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int WordId { get; set; }
 
-        public string WordName { get; set; }
-
+        [Required]
+        [StringLength(64)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
-        
-        public List<Recording> Recordings { get; set; }
+
+        public virtual ICollection<Recording> Recordings { get; set; }
     }
 }

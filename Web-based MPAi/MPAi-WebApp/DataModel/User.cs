@@ -5,17 +5,21 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MPAi_WebApp.DataModel
+namespace UploadRecording.DataModel
 {
-    /// <summary>
-    /// Wrapper class to hold values from the User table. 
-    /// Each field corresponds to a row in the User SQL table.
-    /// These classes make it easier to move results from queries around the program.
-    /// </summary>
-    public class User
+    [Table("User")]
+    public partial class User
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
+        [Required]
+        [StringLength(64)]
+        [Index(IsUnique = true)]
         public string Username { get; set; }
+
+        [Required]
+        [StringLength(64)]
+        public string Password { get; set; }
     }
 }
