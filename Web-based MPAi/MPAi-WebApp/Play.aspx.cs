@@ -20,7 +20,7 @@ namespace MPAi_WebApp
             string category = Request.Form["wordCategory"];
 
             Debug.WriteLine("Count: " + Request.Form.Count);
-            Debug.WriteLine("Name: " + name);
+            Debug.WriteLine("respond: " + name);
             Debug.WriteLine("Category: " + category);
 
             // Create list of recording objects.
